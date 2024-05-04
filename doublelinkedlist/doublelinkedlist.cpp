@@ -14,6 +14,11 @@ struct Node
 Node* START = NULL; // pointer global yang menunjuk atau berada di awal / start linked list
 
 void addNode() {
+	Node* newNode = new Node();								//step 1: Membuat node baru
+	cout << "\nEnter the roll number of the student : ";
+	cin >> newNode->noMhs;									//Mengisi nilai pada field nomor mahasiswa dari node baru
+	cout << "\nEnter the name of the student : ";
+	cin >> newNode->name;									//Mengisi nilai pada field nama mahasiswa dari node baru
 }
 
 int main() {
