@@ -19,6 +19,15 @@ void addNode() {
 	cin >> newNode->noMhs;									//Mengisi nilai pada field nomor mahasiswa dari node baru
 	cout << "\nEnter the name of the student : ";
 	cin >> newNode->name;									//Mengisi nilai pada field nama mahasiswa dari node baru
+
+	// Memasukkan node baru ke dalam linked list
+	if (START == NULL || newNode->noMhs <= START->noMhs) { //Langkah 2: Memasukkan node baru
+
+		if (START != NULL && newNode->noMhs == START->noMhs) {
+			cout << "\033[31mDuplicate roll numbers not allowed\033[0m" << endl;
+			return;
+		}
+	}
 }
 
 int main() {
