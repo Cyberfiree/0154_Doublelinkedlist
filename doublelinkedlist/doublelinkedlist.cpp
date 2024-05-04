@@ -27,6 +27,13 @@ void addNode() {
 			cout << "\033[31mDuplicate roll numbers not allowed\033[0m" << endl;
 			return;
 		}
+		// Jika linked list kosong, node baru menjadi START
+		newNode->next = START;								//Langkah 3: Menjadikan node baru menunjuk ke node pertama			
+		if (START != NULL) {
+			START->prev = newNode;							//Langkah 4: Menjadikan node pertama menunjuk ke node baru
+		}
+		newNode->prev = NULL;								//Langkah 5: Menjadikan node baru menunjuk ke NULL
+		START = newNode;									//Langkah 6: Menjadikan node baru sebagai node pertama
 	}
 }
 
