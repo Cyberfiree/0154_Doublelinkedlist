@@ -111,6 +111,10 @@ void deleteNode() {
 			current->next->prev = previous;
 		}
 	}
+
+	// Membebaskan memori dari node yang ditandai sebagai current
+	delete current;
+	cout << "\x1b[32mRecord with roll number" << rollNo << "deleted\x1b[0m" << endl;
 }
 
 int main() {
