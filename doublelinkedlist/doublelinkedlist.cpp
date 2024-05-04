@@ -44,6 +44,20 @@ void addNode() {
 			previous = current;								//step 1.d : Pindahkan node sebelumnya ke node saat ini
 			current = current->next;						//step 1.e : Pindahkan node saat ini ke node berikutnya
 		}
+		newNode->next = current;							//step 4 : Menjadikan field next dari node baru menunjuk ke node saat ini
+		newNode->prev = previous;							//step 5 : Menjadikan field prev dari node baru menunjuk ke node sebelumnya
+
+		if (current != NULL) {
+			current->prev = newNode;						//step 6 : Menjadikan field prev dari node saat ini menunjuk ke node baru
+		}
+
+		if (previous != NULL) {
+			previous->next = newNode;						//step 7 : Menjadikan field next dari node sebelumnya menunjuk ke node baru
+		}
+		else {
+			//Jika node sebelumnya masih NULL, artinya newNode sekarang adalah node pertama
+			START = newNode;
+		}
 	}
 }
 
