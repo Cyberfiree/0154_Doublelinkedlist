@@ -12,5 +12,9 @@ struct Node
 };
 
 Node* START = NULL; // pointer global yang menunjuk atau berada di awal / start linked list
+
+void addNode() {
+}
+
 int main() {
 }
