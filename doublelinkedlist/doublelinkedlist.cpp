@@ -35,6 +35,16 @@ void addNode() {
 		newNode->prev = NULL;								//Langkah 5: Menjadikan node baru menunjuk ke NULL
 		START = newNode;									//Langkah 6: Menjadikan node baru sebagai node pertama
 	}
+	else {
+		//Memasukkan node baru di tengah atau di akhir linked list
+		Node* current = START;								//step 1.a : Mulai dari node pertama
+		Node* previous = NULL;								//step 1.b : Node sebelumnya NULL pada awalnya
+
+		while (current != NULL && current->noMhs < newNode->noMhs) { // step 1.c : Penelusuran
+			previous = current;								//step 1.d : Pindahkan node sebelumnya ke node saat ini
+			current = current->next;						//step 1.e : Pindahkan node saat ini ke node berikutnya
+		}
+	}
 }
 
 int main() {
