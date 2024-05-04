@@ -168,5 +168,56 @@ void searchData() {
 	}
 }
 
-int main() {
+int main() { // memulai program utama.
+	while (true) {
+		// Ini adalah loop yang akan terus berjalan sampai pengguna memilih untuk keluar.
+		try {  // Ini adalah blok percobaan
+			cout << "\nMenu" << endl;
+			cout << "1. add arecord to the list" << endl;
+			cout << "2. Delete a record from the list" << endl;
+			cout << "3. View all records in the ascending order of roll numbers" << endl;
+			cout << "4. View all records in the descending order of roll numbers" << endl;
+			cout << "5. search for a record in the list" << endl;
+			cout << "6. Exit" << endl;
+			cout << "\nEnter your choice (1-6) :";
+			char ch; // Variabel untuk menyimpan pilihan pengguna.
+			cin >> ch; // Mengambil input dari pengguna.
+
+
+			switch (ch) {
+				// Memproses pilihan pengguna menggunakan switch case.
+			case '1':
+				// Jika pengguna memilih opsi 1, panggil fungsi untuk menambah rekaman.
+				addNode();
+				break;
+			case'2':
+				// Jika pengguna memilih opsi 2, panggil fungsi untuk menghapus rekaman.
+				deleteNode();
+				break;
+			case '3':
+				// Jika pengguna memilih opsi 3, panggil fungsi untuk melihat rekaman secara menaik.
+				traverse();
+				break;
+			case '4':
+				// Jika pengguna memilih opsi 4, panggil fungsi untuk melihat rekaman secara menurun.
+				revtraverse();
+				break;
+			case '5':
+				// Jika pengguna memilih opsi 5, panggil fungsi untuk mencari rekaman.
+				searchData();
+				break;
+			case '6':
+				// Jika pengguna memilih opsi 6, keluar dari program.
+				return 0;
+			default:
+				// Jika pengguna memilih opsi yang tidak valid, tampilkan pesan kesalahan.
+				cout << "\nInvalid option" << endl;
+				break;
+			}
+		}
+		catch (exception& e) {
+			// Tangkap dan tangani pengecualian jika terjadi.
+			cout << "Check for the values entered." << endl;
+		}
+	}
 }
