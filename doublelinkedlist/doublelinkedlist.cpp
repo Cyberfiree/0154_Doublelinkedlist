@@ -104,6 +104,13 @@ void deleteNode() {
 			START->prev = NULL;
 		}
 	}
+
+	else {
+		//Node yang akan dihapus bukan node pertama
+		previous->next = current->next; {	//If there's a successor, update its prev pointer
+			current->next->prev = previous;
+		}
+	}
 }
 
 int main() {
