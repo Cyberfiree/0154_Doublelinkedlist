@@ -96,6 +96,14 @@ void deleteNode() {
 		cout << "\033[31the record with roll number" << rollNo << "not found\033[0m" << endl;
 		return;
 	}
+
+	// Node yang akan dihapus adalah node pertama
+	if (current == START) {
+		START = START->next;	
+		if (START != NULL) {
+			START->prev = NULL;
+		}
+	}
 }
 
 int main() {
