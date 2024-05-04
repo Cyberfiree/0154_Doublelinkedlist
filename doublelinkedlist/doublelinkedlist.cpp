@@ -1,5 +1,11 @@
 #include <iostream>
+#include <string>
+using namespace std;
 
-int main()
+// Membuat struktur untuk menyatukan banyak data
+struct Node
 {
+};
+
+int main() {
 }
